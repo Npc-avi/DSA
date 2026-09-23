@@ -1,12 +1,12 @@
-class Solution(object):
-    def checkPerfectNumber(self, num):
-        if num < 2: return False
-        s = 1
-        i = 2
-        while i * i <= num:
-            if num % i == 0:
-                s += i
-                if i * i != num:
-                    s += num // i
-            i += 1
-        return s == num
+class Solution:
+    def checkPerfectNumber(self, num: int) -> bool:
+        if num<=1:
+            return False 
+        z=1
+        for i in range (2,int(num**0.5)+1):
+            if num%i==0:
+                z+=i
+                if i!=(num//i):
+                    z+=(num//i)
+        return z==num
+
